@@ -1,0 +1,6 @@
+create Nx project
+npx create-nx-workspace packt --appName=tour --preset=angular --style=css --linter=eslint --nx-cloud=false --routing
+//to run open the project in the VSCode editor and click on the Nx Console menu in the VSCode sidebar.
+//
+
+Select the Serve option from the GENERATE & RUN TARGET pane
