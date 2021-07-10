@@ -35,6 +35,7 @@
     "@angular/compiler": "^12.0.0",
     "@angular/core": "^12.0.0",
     "@angular/forms": "^12.0.0",
+    "@angular/google-maps": "^12.1.1",
     "@angular/material": "^12.1.1",
     "@angular/platform-browser": "^12.0.0",
     "@angular/platform-browser-dynamic": "^12.0.0",
@@ -45,6 +46,8 @@
     "@ngrx/router-store": "^12.0.0",
     "@ngrx/store": "^12.0.0",
     "@nrwl/angular": "12.5.7",
+    "chart.js": "^2.9.3",
+    "ng2-charts": "^2.4.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

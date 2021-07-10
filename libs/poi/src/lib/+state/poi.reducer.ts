@@ -1,7 +1,8 @@
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
-import { createReducer, on, Action } from '@ngrx/store';
-
 import * as PoiActions from './poi.actions';
+
+import { Action, createReducer, on } from '@ngrx/store';
+import { EntityAdapter, EntityState, createEntityAdapter } from '@ngrx/entity';
+
 import { PoiEntity } from './poi.models';
 
 export const POI_FEATURE_KEY = 'poi';
@@ -30,7 +31,10 @@ const poiReducer = createReducer(
   on(PoiActions.loadPoiSuccess, (state, { poi }) =>
     poiAdapter.setAll(poi, { ...state, loaded: true })
   ),
-  on(PoiActions.loadPoiFailure, (state, { error }) => ({ ...state, error }))
+  on(PoiActions.loadPoiFailure, (state, { error }) => ({ ...state, error })),
+  on(PoiActions.selectPoi, (state, { poiId }) => ({
+
+    ...state, selectedId: poiId }))
 );
 
 export function reducer(state: State | undefined, action: Action) {

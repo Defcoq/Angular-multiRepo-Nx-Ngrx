@@ -3,6 +3,7 @@ import * as PoiFeature from './poi.reducer';
 
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
+import { EMPTY } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { PoiService } from '../poi.service'
 import { fetch } from '@nrwl/angular';
@@ -31,6 +32,36 @@ export class PoiEffects {
       })
     )
   );
+
+  visit$ = createEffect(() =>
+
+  this.actions$.pipe(
+
+    ofType(PoiActions.visitPoi),
+
+    fetch({
+
+      run: action => {
+
+        const stat = localStorage.getItem('tour-' +
+
+          action.poiId);
+
+        const total = stat ? Number(stat) + 1 : 1;
+
+        localStorage.setItem('tour-' + action.poiId,
+
+          total.toString());
+
+        return EMPTY;
+
+      }
+
+    })
+
+  )
+
+);
 
   constructor(private actions$: Actions, private poiService: PoiService) {}
 }
