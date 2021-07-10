@@ -51,6 +51,31 @@
         }
       }
     },
+    "poi": {
+      "projectType": "library",
+      "root": "libs/poi",
+      "sourceRoot": "libs/poi/src",
+      "prefix": "packt",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/poi"],
+          "options": {
+            "jestConfig": "libs/poi/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/poi/src/**/*.ts",
+              "libs/poi/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "tour": {
       "projectType": "application",
       "root": "apps/tour",

@@ -1,6 +1,11 @@
+Insatall Nx glbally
+npm install -g nx
 create Nx project
 npx create-nx-workspace packt --appName=tour --preset=angular --style=css --linter=eslint --nx-cloud=false --routing
 //to run open the project in the VSCode editor and click on the Nx Console menu in the VSCode sidebar.
 //
 
 Select the Serve option from the GENERATE & RUN TARGET pane
+
+Create ngrx state command
+nx generate ngrx app --root --no-interactive --project=tour --module=apps/tour/src/app/app.module.ts
